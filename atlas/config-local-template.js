@@ -22,7 +22,6 @@ define([], function () {
 		"icon": "fa $ATLAS_SECURITY_ICON",
 		"isUseCredentialsForm": $ATLAS_SECURITY_USE_FORM
 	}];
-	
 
 	return configLocal;
 });

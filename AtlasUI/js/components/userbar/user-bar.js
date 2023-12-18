@@ -111,8 +111,8 @@ define([
 			});
 			this.msalConfig = {
 				auth: {
-					clientId: "f06cc2c2-be11-4a2e-9db7-f4c27147cc0e",
-					authority: "https://login.microsoftonline.com/7266b166-c08a-4bdf-babd-868d05984b80",
+					clientId: "19e05618-1754-490e-95ff-37216d98c573",
+					authority: "https://login.microsoftonline.com/9a2a9ade-704f-4416-b094-47b8a504ad39",
 					redirectUri: "http://localhost/atlas"
 				}
 			};
