@@ -72,12 +72,12 @@ services:
       file: "ohdsi-webapi.yml"
       service: ohdsi-webapi
 
-  ohdsi-atlas-from-image:
-    profiles: [ "default", "atlas-from-image" ]
-    image: docker.io/ohdsi/atlas:latest
-    extends: 
-      file: "ohdsi-atlas.yml"
-      service: ohdsi-atlas
+  # ohdsi-atlas-from-image:
+  #   profiles: [ "default", "atlas-from-image" ]
+  #   image: docker.io/ohdsi/atlas:latest
+  #   extends: 
+  #     file: "ohdsi-atlas.yml"
+  #     service: ohdsi-atlas
 
   # WebAPI and Atlas services based on git repo (for developers) -------------
   ohdsi-webapi-from-git:
@@ -91,8 +91,11 @@ services:
       service: ohdsi-webapi
 
   ohdsi-atlas-from-git:
-    profiles: [ "atlas-from-git" ]
-    build: ${ATLAS_GITHUB_URL}
+    profiles: [ "default" ]
+    build: 
+      context: ./AtlasUI
+      args:
+        MAVEN_PARAMS: "-DskipTests=true -DskipUnitTests=true"
     extends: 
       file: "ohdsi-atlas.yml"
       service: ohdsi-atlas
